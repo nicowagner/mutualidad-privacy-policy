@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eliminar Cuenta - Mutualidad del Círculo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.8;
+      color: #333;
+      background: #f8f9fa;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #1B4332;
+    }
+
+    .logo-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #1B4332;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      color: #1B4332;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #1B4332;
+      margin-bottom: 12px;
+      margin-top: 28px;
+    }
+
+    p, li {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+    }
+
+    /* ── Option cards ── */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .option-card {
+      border: 1.5px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 20px 22px;
+    }
+
+    .option-card.primary {
+      border-color: #1B4332;
+      background: #f0f7f4;
+    }
+
+    .option-card .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .option-card.primary .badge {
+      background: #1B4332;
+      color: white;
+    }
+
+    .option-card.secondary .badge {
+      background: #e0e0e0;
+      color: #555;
+    }
+
+    .option-card h3 {
+      font-size: 1rem;
+      color: #1B4332;
+      margin-bottom: 6px;
+    }
+
+    .option-card p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    .steps {
+      list-style: none;
+      padding: 0;
+      counter-reset: steps;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+      color: #444;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #1B4332;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Email button ── */
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1B4332;
+      color: white;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-top: 4px;
+      transition: background 0.2s;
+    }
+
+    .email-btn:hover { background: #2D5A3D; }
+
+    /* ── Warning box ── */
+    .warning-box {
+      background: #fff8e1;
+      border: 1.5px solid #ffe082;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 28px;
+    }
+
+    .warning-box p {
+      font-size: 0.88rem;
+      color: #5d4037;
+    }
+
+    .warning-box strong { color: #bf360c; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.8rem;
+      color: #999;
+      text-align: center;
+    }
+
+    footer a { color: #1B4332; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .container { padding: 24px 18px; }
+      header h1 { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="logo-circle">M</div>
+      <div>
+        <h1>Mutualidad del Círculo</h1>
+        <p>Eliminación y baja de cuenta</p>
+      </div>
+    </header>
+
+    <p>
+      En Mutualidad del Círculo respetamos tu derecho a controlar tus datos personales.
+      Podés solicitar la eliminación de tu cuenta y todos los datos asociados en cualquier momento,
+      de forma gratuita y sin necesidad de justificación.
+    </p>
+
+    <h2>¿Qué datos se eliminan?</h2>
+    <ul>
+      <li>Perfil personal (nombre, DNI, dirección, teléfono, etc.)</li>
+      <li>Historial de créditos y transacciones</li>
+      <li>Grupo familiar registrado</li>
+      <li>Historial de suscripciones y beneficios</li>
+      <li>Credenciales de acceso (email y contraseña)</li>
+    </ul>
+    <p style="margin-top:8px;">
+      <strong>Nota:</strong> algunos registros contables pueden conservarse por obligaciones legales
+      durante un plazo de hasta 5 años, según la legislación argentina vigente.
+    </p>
+
+    <h2>¿Cómo solicitar la baja?</h2>
+
+    <div class="options">
+
+      <!-- Option 1: In-app (preferred) -->
+      <div class="option-card primary">
+        <span class="badge">Recomendado</span>
+        <h3>Desde la aplicación móvil</h3>
+        <p>La forma más rápida e inmediata. La eliminación se procesa en el momento.</p>
+        <ol class="steps">
+          <li>Abrí la app <strong>Mutualidad del Círculo</strong></li>
+          <li>Iniciá sesión con tu cuenta</li>
+          <li>Tocá el ícono de tu avatar en la pantalla principal</li>
+          <li>Desplazate hasta la sección <strong>"Gestión de Cuenta"</strong></li>
+          <li>Tocá <strong>"Solicitar baja de cuenta"</strong> y confirmá</li>
+        </ol>
+      </div>
+
+      <!-- Option 2: Email request -->
+      <div class="option-card secondary">
+        <span class="badge">Alternativa</span>
+        <h3>Por correo electrónico</h3>
+        <p>
+          Si no podés acceder a la app, envianos un email desde la dirección asociada a tu cuenta.
+          Procesaremos la solicitud dentro de los 30 días hábiles.
+        </p>
+        <a
+          class="email-btn"
+          href="mailto:mutualdelcirculo@gmail.com?subject=Solicitud%20de%20baja%20de%20cuenta&body=Hola%2C%0A%0ASolicito%20la%20eliminaci%C3%B3n%20de%20mi%20cuenta%20y%20todos%20mis%20datos%20personales%20de%20la%20aplicaci%C3%B3n%20Mutualidad%20del%20C%C3%ADrculo.%0A%0AEmail%20de%20la%20cuenta%3A%20%0ADNI%3A%20%0A%0AEntiendo%20que%20esta%20acci%C3%B3n%20es%20irreversible.%0A%0AAtentamente."
+        >
+          ✉ Enviar solicitud por email
+        </a>
+      </div>
+
+    </div>
+
+    <div class="warning-box">
+      <p>
+        ⚠️ <strong>Esta acción es irreversible.</strong> Una vez eliminada tu cuenta,
+        no podrás recuperar tus créditos, historial ni datos asociados.
+        Si tenés dudas, te recomendamos contactar con soporte antes de proceder.
+      </p>
+    </div>
+
+    <footer>
+      <p>
+        ¿Tenés preguntas? Escribinos a
+        <a href="mailto:mutualdelcirculo@gmail.com">mutualdelcirculo@gmail.com</a>
+      </p>
+      <p style="margin-top:8px;">
+        <a href="./index.html">← Política de Privacidad</a>
+        &nbsp;·&nbsp;
+        © 2026 Mutualidad del Círculo
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>
